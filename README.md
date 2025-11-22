@@ -99,79 +99,20 @@ cd credbar
 2. **Install Dependencies**
 \`\`\`bash
 npm install
-# atau
+
 yarn install
 \`\`\`
 
 3. **Setup Environment Variables**
 Buat file `.env.local` di root directory:
 \`\`\`env
-# Tambahkan variabel environment sesuai kebutuhan
+
 NEXT_PUBLIC_API_URL=http://localhost:3000
 \`\`\`
 
 4. **Jalankan Development Server**
 \`\`\`bash
 npm run dev
-# atau
-yarn dev
-\`\`\`
-
-5. **Buka Browser**
-Kunjungi [http://localhost:3000](http://localhost:3000)
-
-### Build untuk Production
-\`\`\`bash
-npm run build
-npm start
-\`\`\`
-
----
-
-
-
-\`\`\`
-credbar/
-├── app/
-│   ├── page.tsx              # Landing page (home)
-│   ├── login/page.tsx         # Halaman login
-│   ├── register/page.tsx      # Halaman registrasi
-│   ├── dashboard/
-│   │   ├── page.tsx          # Dashboard user
-│   │   └── analytics/        # Analytics page
-│   ├── agent/
-│   │   ├── dashboard/        # Dashboard agent/bendahara
-│   │   └── add-customer/     # Tambah anggota
-│   ├── admin/
-│   │   ├── dashboard/        # Admin dashboard
-│   │   ├── import/           # Import data massal
-│   │   ├── reports/          # Laporan admin
-│   │   └── validation/       # Validasi data
-│   ├── layout.tsx            # Root layout
-│   └── globals.css           # Global styles
-├── components/
-│   ├── site-header.tsx       # Navigation header
-│   ├── site-footer.tsx       # Footer
-│   ├── landing/              # Landing page components
-│   │   ├── hero.tsx
-│   │   ├── social-proof.tsx
-│   │   ├── problems.tsx
-│   │   ├── solutions.tsx
-│   │   ├── features.tsx
-│   │   └── testimonial-cta.tsx
-│   ├── ui/                   # Shadcn UI components
-│   └── [feature]/            # Feature-specific components
-├── lib/
-│   └── utils.ts              # Utility functions
-├── public/
-│   ├── logo.png              # Logo aplikasi
-│   └── [other assets]
-├── package.json
-├── tsconfig.json
-└── README.md
-\`\`\`
-
----
 
 ## 💡 Panduan Penggunaan
 
