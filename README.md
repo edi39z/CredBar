@@ -1,6 +1,6 @@
 # CredBar - Manajemen Keuangan Kelompok yang Transparan
 
-![CredBar Logo](./public/logo.png)
+
 
 ## 📋 Daftar Isi
 - [Tentang CredBar](#tentang-credbar)
@@ -128,7 +128,7 @@ npm start
 
 ---
 
-## 📂 Struktur Proyek
+
 
 \`\`\`
 credbar/
@@ -249,7 +249,6 @@ Project ini dilisensikan di bawah MIT License - lihat file [LICENSE](LICENSE) un
 
 ## 🗺️ Roadmap
 
-- [ ] Integrasi Payment Gateway (Stripe, GoPay, OVO)
 - [ ] Push notification untuk mobile
 - [ ] Dark mode theme selector
 - [ ] Multi-currency support
