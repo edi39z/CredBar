@@ -49,4 +49,5 @@ export async function POST(req: NextRequest) {
         console.error("[v0] register error:", err)
         return NextResponse.json({ message: "Terjadi kesalahan pada server" }, { status: 500 })
     }
+    
 }

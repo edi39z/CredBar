@@ -4,7 +4,7 @@ import { LoginForm } from "@/components/login-form"
 export default function LoginPage() {
     return (
         <main className="min-h-screen relative flex items-center">
-            {/* Background image */}
+
             <div className="absolute inset-0 -z-10">
                 <Image
                     src="/BackGroundAuth.png"
@@ -13,7 +13,7 @@ export default function LoginPage() {
                     priority
                     className="object-cover"
                 />
-                {/* subtle overlay for contrast */}
+
                 <div className="absolute inset-0 bg-black/10" />
             </div>
 
