@@ -1,36 +1,265 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CredBar - Manajemen Keuangan Kelompok yang Transparan
 
-## Getting Started
+![CredBar Logo](./public/logo.png)
 
-First, run the development server:
+## 📋 Daftar Isi
+- [Tentang CredBar](#tentang-credbar)
+- [Fitur Utama](#fitur-utama)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Instalasi & Setup](#instalasi--setup)
+- [Struktur Proyek](#struktur-proyek)
+- [Panduan Penggunaan](#panduan-penggunaan)
+- [Tim & Kontribusi](#tim--kontribusi)
 
-```bash
+---
+
+## 🎯 Tentang CredBar
+
+**CredBar** adalah platform manajemen keuangan kelompok yang dirancang untuk Gen Z. Aplikasi ini menyelesaikan masalah klasik: mengelola iuran, patungan, dan hutang di antara teman-teman, keluarga, atau organisasi menjadi mudah, transparan, dan tanpa drama.
+
+### Masalah yang Diselesaikan:
+- ❌ **Kurang Transparan**: Pencatatan iuran sering tercampur di chat grup
+- ❌ **Nggak Enak Nagih**: Canggung untuk menagih utang teman
+- ❌ **Serba Manual & Lupa**: Harus selalu ingat jadwal dan menghitung ulang
+
+### Solusi CredBar:
+✅ **Dashboard Terpusat** - Semua anggota lihat status pembayaran real-time  
+✅ **Pengingat Otomatis** - Sistem otomatis mengirimkan notifikasi jatuh tempo  
+✅ **Laporan Keuangan Instan** - Ekspor laporan PDF dengan sekali klik  
+
+---
+
+## ✨ Fitur Utama
+
+### Untuk User Umum
+- **Buat Grup** - Buat grup baru dalam hitungan detik
+- **Undang Anggota** - Bagikan link atau email untuk undangan
+- **Atur Iuran Berulang** - Buat tagihan otomatis (harian, mingguan, bulanan)
+- **Lihat Status Pembayaran** - Dashboard real-time untuk tracking pembayaran
+- **Upload Bukti Transfer** - Anggota bisa submit bukti transfer langsung
+- **Laporan Keuangan** - Rekap otomatis dan ekspor PDF
+
+### Untuk Admin/Bendahara
+- **Validasi Pembayaran** - Konfirmasi pembayaran dari anggota
+- **Import Data Massal** - Upload data iuran dari file Excel/CSV
+- **Manajemen Anggota** - Tambah, edit, atau hapus anggota grup
+- **Laporan Lengkap** - Laporan bulanan, tahunan, dan custom range
+- **Pengaturan Grup** - Kelola preferensi dan aturan grup
+
+### Untuk Admin Sistem
+- **Dashboard Admin** - Monitor semua grup dan pengguna
+- **Validasi Data** - Verifikasi integritas data di sistem
+- **Analytics** - Lihat statistik penggunaan aplikasi
+- **Laporan Sistem** - Export data untuk audit
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+### Frontend
+- **React 19** - Library UI modern
+- **Next.js 15** - Framework React dengan App Router
+- **TypeScript** - Type safety dan developer experience
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **Shadcn/ui** - Component library berkualitas tinggi
+
+### UI & Interaction
+- **Lucide React** - Icon library yang comprehensive
+- **React Hook Form** - Form handling yang efisien
+- **Zod** - Schema validation
+- **Recharts** - Interactive charts untuk analytics
+- **Sonner** - Toast notifications
+
+### State & Data
+- **React Context** - State management
+- **Date-fns** - Date manipulation
+- **Embla Carousel** - Carousel component
+
+### Development
+- **ESLint** - Code linting
+- **Autoprefixer** - CSS vendor prefixes
+- **PostCSS** - CSS transformation
+
+---
+
+## 🚀 Instalasi & Setup
+
+### Prerequisite
+- Node.js 18+ 
+- npm atau yarn
+
+### Langkah-Langkah
+
+1. **Clone Repository**
+\`\`\`bash
+git clone https://github.com/yourusername/credbar.git
+cd credbar
+\`\`\`
+
+2. **Install Dependencies**
+\`\`\`bash
+npm install
+# atau
+yarn install
+\`\`\`
+
+3. **Setup Environment Variables**
+Buat file `.env.local` di root directory:
+\`\`\`env
+# Tambahkan variabel environment sesuai kebutuhan
+NEXT_PUBLIC_API_URL=http://localhost:3000
+\`\`\`
+
+4. **Jalankan Development Server**
+\`\`\`bash
 npm run dev
-# or
+# atau
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. **Buka Browser**
+Kunjungi [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build untuk Production
+\`\`\`bash
+npm run build
+npm start
+\`\`\`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Struktur Proyek
 
-To learn more about Next.js, take a look at the following resources:
+\`\`\`
+credbar/
+├── app/
+│   ├── page.tsx              # Landing page (home)
+│   ├── login/page.tsx         # Halaman login
+│   ├── register/page.tsx      # Halaman registrasi
+│   ├── dashboard/
+│   │   ├── page.tsx          # Dashboard user
+│   │   └── analytics/        # Analytics page
+│   ├── agent/
+│   │   ├── dashboard/        # Dashboard agent/bendahara
+│   │   └── add-customer/     # Tambah anggota
+│   ├── admin/
+│   │   ├── dashboard/        # Admin dashboard
+│   │   ├── import/           # Import data massal
+│   │   ├── reports/          # Laporan admin
+│   │   └── validation/       # Validasi data
+│   ├── layout.tsx            # Root layout
+│   └── globals.css           # Global styles
+├── components/
+│   ├── site-header.tsx       # Navigation header
+│   ├── site-footer.tsx       # Footer
+│   ├── landing/              # Landing page components
+│   │   ├── hero.tsx
+│   │   ├── social-proof.tsx
+│   │   ├── problems.tsx
+│   │   ├── solutions.tsx
+│   │   ├── features.tsx
+│   │   └── testimonial-cta.tsx
+│   ├── ui/                   # Shadcn UI components
+│   └── [feature]/            # Feature-specific components
+├── lib/
+│   └── utils.ts              # Utility functions
+├── public/
+│   ├── logo.png              # Logo aplikasi
+│   └── [other assets]
+├── package.json
+├── tsconfig.json
+└── README.md
+\`\`\`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💡 Panduan Penggunaan
 
-## Deploy on Vercel
+### Untuk User Baru
+1. **Kunjungi Landing Page** - Baca tentang CredBar di halaman beranda
+2. **Klik "Daftar Sekarang"** - Buat akun baru (gratis!)
+3. **Verifikasi Email** - Cek email dan klik link verifikasi
+4. **Buat Grup Pertama** - Masukkan nama grup dan anggota
+5. **Mulai Manage Iuran** - Buat iuran dan invite anggota
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Untuk Bendahara/Admin
+1. **Login ke Akun** - Gunakan email dan password
+2. **Masuk ke Grup** - Pilih grup yang ingin dikelola
+3. **Atur Iuran** - Buat iuran berulang atau satu kali
+4. **Validasi Pembayaran** - Konfirmasi pembayaran anggota
+5. **Export Laporan** - Download laporan PDF sesuai kebutuhan
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Untuk Admin Sistem
+1. **Akses Admin Dashboard** - Login dengan akun admin
+2. **Monitor Grup** - Lihat semua grup yang aktif
+3. **Validate Data** - Periksa integritas data
+4. **Export Analytics** - Ambil data untuk reporting
+
+---
+
+## 🎨 Design System
+
+CredBar menggunakan **Glassmorphism** design dengan palet warna:
+- **Primary**: Ocean Blue (#0066FF)
+- **Secondary**: Mint Green (#00D98E)
+- **Accent**: Lavender Purple (#B78EFF)
+- **Neutral**: Charcoal Gray & White
+- **Success**: Emerald Green (#00C896)
+
+Semua komponennya responsif dan accessible sesuai standar WCAG.
+
+---
+
+## 📱 Responsive Design
+
+- **Mobile-First Approach** - Dioptimalkan untuk smartphone terlebih dahulu
+- **Breakpoints**: 
+  - Mobile: < 640px
+  - Tablet: 640px - 1024px
+  - Desktop: > 1024px
+
+---
+
+## 🤝 Tim & Kontribusi
+
+Buatan dengan ❤️ untuk memudahkan kelola keuangan kelompok.
+
+### Cara Berkontribusi
+1. Fork repository ini
+2. Buat branch feature (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+---
+
+## 📄 Lisensi
+
+Project ini dilisensikan di bawah MIT License - lihat file [LICENSE](LICENSE) untuk detail.
+
+---
+
+## 📞 Support & Kontak
+
+- **Email**: support@credbar.com
+- **Chat**: Hubungi tim support via dashboard
+- **Dokumentasi**: [docs.credbar.com](https://docs.credbar.com)
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Integrasi Payment Gateway (Stripe, GoPay, OVO)
+- [ ] Push notification untuk mobile
+- [ ] Dark mode theme selector
+- [ ] Multi-currency support
+- [ ] Recurring payment automation
+- [ ] Advanced analytics & reporting
+- [ ] Mobile app (React Native)
+- [ ] API public untuk third-party integration
+
+---
+
+**Terima kasih telah menggunakan CredBar!** 🎉
+
+Jika punya saran atau pertanyaan, jangan ragu untuk membuka issue atau menghubungi kami.
