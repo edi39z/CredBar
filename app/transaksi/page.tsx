@@ -22,7 +22,7 @@ export default function TransaksiPage() {
             id: "1",
             tipe: "masuk",
             deskripsi: "Pembayaran iuran WiFi dari Budi",
-            nominal: 50000,
+            nominal: 500000,
             tanggal: "2025-10-31",
             kategori: "Iuran",
             namaGrup: "Iuran WiFi Kos",
@@ -34,7 +34,7 @@ export default function TransaksiPage() {
             nominal: 250000,
             tanggal: "2025-10-30",
             kategori: "Pengeluaran",
-            namaGrup: "Iuran WiFi Kos",
+            namaGrup: "Iuran WiFi Koss",
         },
         {
             id: "3",
